@@ -1,5 +1,5 @@
 export default class SellerOnboarding {
-    fillInput(): void {
+    public static fillInput() {
         cy.log("You are in sellerOnboarding.ts file");
     }
 }

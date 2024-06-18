@@ -1,5 +1,5 @@
 export default class Common{
-    commonStep(): void {
+    public static commonStep() {
         cy.log("You are in common.ts file");
     }
 }
