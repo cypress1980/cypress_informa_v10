@@ -8,12 +8,12 @@ on:
         inputs:
             test_suite:
                 description: "Please give tag name"
-                default: "SupplierManagement"
-                type: "string"
+                default: SupplierManagement
+                
             environment:
                 description: "Please give environment"
-                default: "test"
-                type: "string"
+                default: test
+                
 
 jobs:
     cypress-run:
