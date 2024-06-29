@@ -14,7 +14,7 @@ Feature: Prototype Buyers
         And I should see Send Invitation button disabled
         When I enter testing in Invite Supplier Name field
         And I enter test in Invite Supplier Company Name field
-        And I enter testing3@gmail.com in Invite Supplier Email field
+        And I enter testing33@gmail.com in Invite Supplier Email field
         Then I should see Send Invitation button enabled
         When I click on Send Invitation button
         Then I should see text Invitation sent successfully
