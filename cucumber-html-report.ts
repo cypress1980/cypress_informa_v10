@@ -8,7 +8,7 @@ const args = process.argv.toString().split(",");
 
 console.log(args);
 
-//let environment = args[2];
+//let environment = args[2]; //
 
 //console.log("environment: " + environment);
 
