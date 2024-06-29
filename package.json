@@ -13,6 +13,8 @@
     "@badeball/cypress-cucumber-preprocessor": "^20.0.6",
     "@cypress/browserify-preprocessor": "^3.0.2",
     "cypress": "^10.11.0",
+    "cypress-iframe": "^1.0.1",
+    "cypress-xpath": "^2.0.1",
     "multiple-cucumber-html-reporter": "^3.6.2",
     "typescript": "^5.4.5"
   },
@@ -23,7 +25,7 @@
     ],
     "cucumberJson": {
       "generate": true,
-      "outputFolder": "cypress/cucumber-json",
+      "outputFolder": ".tmp/cucumber-json",
       "filePrefix": "",
       "fileSuffix": ".cucumber"
     },
