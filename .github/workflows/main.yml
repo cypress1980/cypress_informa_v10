@@ -43,4 +43,4 @@ jobs:
                 # CYPRESS_TAGS: '@yourTag'
                 # CYPRESS_ENV_VAR: 'yourValue'
               run: |
-                npx cypress run --env "TAGS=@${{ inputs.test_suite }},environment=${{ inputs.environment }}"
+                npx cypress run --env "TAGS=@${{ github.event.inputs.test_suite }},environment=${{ github.event.inputs.environment }}"
