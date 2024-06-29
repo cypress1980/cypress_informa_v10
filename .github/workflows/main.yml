@@ -21,7 +21,7 @@ jobs:
 
         strategy:
             matrix:
-                node-version: [14.x, 16.x]
+                node-version: [ 16.x]
 
         steps:
             - name: checkout repository
@@ -43,4 +43,4 @@ jobs:
                 # CYPRESS_TAGS: '@yourTag'
                 # CYPRESS_ENV_VAR: 'yourValue'
               run: |
-                npx cypress run --env TAGS=${{ inputs.test_suite }}, environment=${{ inputs.environment }}
+                npx cypress run --env "TAGS='@RegressionTesting', environment=test"
