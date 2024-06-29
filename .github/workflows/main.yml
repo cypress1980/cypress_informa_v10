@@ -8,7 +8,7 @@ on:
         inputs:
             test_suite:
                 description: "Please give tag name"
-                default: "RegressionTesting"
+                default: "SupplierManagement"
                 type: "string"
             environment:
                 description: "Please give environment"
@@ -43,4 +43,4 @@ jobs:
                 # CYPRESS_TAGS: '@yourTag'
                 # CYPRESS_ENV_VAR: 'yourValue'
               run: |
-                npx cypress run tags="@SupplierManagement" --env environment=test
+                npx cypress run --env "TAGS=@${{ inputs.test_suite }},environment=${{ inputs.environment }}"
