@@ -1,8 +1,35 @@
 name: Git-hub-actions-testing
-on: push
+on:
+    push:
+        branches:
+            - main
+
 jobs:
-    my-job:
+    cypress-run:
         runs-on: ubuntu-latest
+
+        strategy:
+            matrix:
+                node-version: [14.x, 16.x]
+
         steps:
-            - name: my-step
-              run: echo "Hello world"
+            - name: checkout repository
+              uses: actions/checkout@v2
+
+            - name: Setup Node.js
+              uses: actions/setup-node@v2
+              with:
+                node-version: ${{ matrix.node-version }}
+
+            - name: Install dependencies
+              run: npm install
+
+            - name: verify cypress cache
+              run: npm ci
+
+            - name: Run cypress tests
+              env:
+                CYPRESS_TAGS: '@yourTag'
+                CYPRESS_ENV_VAR: 'yourValue'
+              run:
+                npx cypress run --env TAGS=${{ env.CYPRESS_TAGS }}, environment=${{ env.CYPRESS_ENV_VAR }}
