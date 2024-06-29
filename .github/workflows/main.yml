@@ -43,4 +43,4 @@ jobs:
                 # CYPRESS_TAGS: '@yourTag'
                 # CYPRESS_ENV_VAR: 'yourValue'
               run: |
-                npx cypress run --env "TAGS='@RegressionTesting', environment=test"
+                npx cypress run tags="@SupplierManagement" --env environment=test
