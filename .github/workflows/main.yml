@@ -4,6 +4,17 @@ on:
         branches:
             - main
 
+    workflow_dispatch:
+        inputs:
+            test_suite:
+                description: "Please give tag name"
+                default: "RegressionTesting"
+                type: "string"
+            environment:
+                description: "Please give environment"
+                default: "test"
+                type: "string"
+
 jobs:
     cypress-run:
         runs-on: ubuntu-latest
@@ -28,8 +39,8 @@ jobs:
               run: npm ci
 
             - name: Run cypress tests
-              env:
-                CYPRESS_TAGS: '@yourTag'
-                CYPRESS_ENV_VAR: 'yourValue'
-              run:
-                npx cypress run --env TAGS=${{ env.CYPRESS_TAGS }}, environment=${{ env.CYPRESS_ENV_VAR }}
+            #   env:
+                # CYPRESS_TAGS: '@yourTag'
+                # CYPRESS_ENV_VAR: 'yourValue'
+              run: |
+                npx cypress run --env TAGS=${{ inputs.test_suite }}, environment=${{ inputs.environment }}
